@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — CareerPersona AI</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="shell">
+  <aside class="sidebar">
+    <div class="logo">CareerPersona <span class="badge">AI</span></div>
+    <a class="active" href="dashboard.html"><span class="icon">&#8226;</span> Dashboard</a>
+    <a href="select-category.html"><span class="icon">&#8226;</span> Practice interview</a>
+    <a href="dashboard.html"><span class="icon">&#8226;</span> History</a>
+    <a href="index.html"><span class="icon">&#8226;</span> Log out</a>
+  </aside>
+
+  <main class="main">
+    <h1>Welcome back, Sayooj</h1>
+    <p>Here's how your practice interviews have been going.</p>
+
+    <div class="stat-row">
+      <div class="stat-box"><div class="n">12</div><div class="l">Interviews completed</div></div>
+      <div class="stat-box"><div class="n">76%</div><div class="l">Average score</div></div>
+      <div class="stat-box"><div class="n">+9%</div><div class="l">Improvement this month</div></div>
+      <div class="stat-box"><div class="n">Technical</div><div class="l">Strongest category</div></div>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+      <h2 style="margin:0;">Recent sessions</h2>
+      <a href="select-category.html" class="btn btn-primary">Start new interview</a>
+    </div>
+
+    <table class="history">
+      <thead>
+        <tr><th>Date</th><th>Category</th><th>Score</th><th>Top area to improve</th><th></th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sep 5, 2026</td>
+          <td><span class="pill pill-brand">Technical</span></td>
+          <td>78%</td>
+          <td>Confidence</td>
+          <td><a href="feedback.html">View</a></td>
+        </tr>
+        <tr>
+          <td>Sep 2, 2026</td>
+          <td><span class="pill pill-teal">HR</span></td>
+          <td>84%</td>
+          <td>Content quality</td>
+          <td><a href="feedback.html">View</a></td>
+        </tr>
+        <tr>
+          <td>Aug 29, 2026</td>
+          <td><span class="pill pill-amber">General</span></td>
+          <td>65%</td>
+          <td>Relevance</td>
+          <td><a href="feedback.html">View</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</div>
+
+</body>
+</html>

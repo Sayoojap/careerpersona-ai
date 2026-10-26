@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technical interview — CareerPersona AI</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="shell">
+  <aside class="sidebar">
+    <div class="logo">CareerPersona <span class="badge">AI</span></div>
+    <a href="dashboard.html"><span class="icon">&#8226;</span> Dashboard</a>
+    <a class="active" href="select-category.html"><span class="icon">&#8226;</span> Practice interview</a>
+    <a href="dashboard.html"><span class="icon">&#8226;</span> History</a>
+    <a href="index.html"><span class="icon">&#8226;</span> Log out</a>
+  </aside>
+
+  <main class="main" style="max-width:720px;">
+    <span class="pill pill-brand">Technical interview</span>
+    <div class="progress-track" style="margin-top:14px;">
+      <div class="progress-fill" style="width:60%;"></div>
+    </div>
+    <p style="margin-top:-8px; font-size:.85rem; color:var(--muted);">Question 3 of 5</p>
+
+    <div class="question-card">
+      <h2>"Explain the difference between a process and a thread."</h2>
+
+      <div class="mode-toggle" role="tablist" aria-label="Answer method">
+        <button class="active" type="button" id="type-tab" onclick="setMode('type')">&#9997;&#65039; Type answer</button>
+        <button type="button" id="voice-tab" onclick="setMode('voice')">&#127908; Record voice</button>
+      </div>
+
+      <div class="field" id="type-mode">
+        <label for="answer">Your answer</label>
+        <textarea id="answer" rows="7" placeholder="Start typing your answer here..."></textarea>
+        <div class="hint">Take your time — there's no timer. Answer as you would in a real interview.</div>
+      </div>
+
+      <!-- Voice mode (shown when "Record voice" is selected) -->
+      <div style="display:none; text-align:center; padding:30px 0;" id="voice-mode">
+        <button class="mic-btn" type="button" id="mic-btn" onclick="toggleRecording()">&#127908;</button>
+        <p style="margin-top:16px; font-size:.9rem;" id="mic-hint">Tap to start recording. We'll transcribe it automatically.</p>
+      </div>
+
+      <script>
+        function setMode(mode){
+          document.getElementById('type-tab').classList.toggle('active', mode === 'type');
+          document.getElementById('voice-tab').classList.toggle('active', mode === 'voice');
+          document.getElementById('type-mode').style.display = mode === 'type' ? 'block' : 'none';
+          document.getElementById('voice-mode').style.display = mode === 'voice' ? 'block' : 'none';
+        }
+        function toggleRecording(){
+          const btn = document.getElementById('mic-btn');
+          const hint = document.getElementById('mic-hint');
+          const recording = btn.classList.toggle('recording');
+          hint.textContent = recording ? 'Recording... tap again to stop.' : 'Tap to start recording. We\'ll transcribe it automatically.';
+        }
+      </script>
+
+      <div style="display:flex; justify-content:space-between; margin-top:10px;">
+        <a href="select-category.html" class="btn btn-ghost">&#8592; Back</a>
+        <a href="feedback.html" class="btn btn-primary">Submit answer &#8594;</a>
+      </div>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>
