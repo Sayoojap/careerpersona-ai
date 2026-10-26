@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choose a category — CareerPersona AI</title>
+<link rel="stylesheet" href="{% static 'assets/style.css' %}">
+</head>
+<body>
+
+<div class="shell">
+  <aside class="sidebar">
+    <div class="logo">CareerPersona <span class="badge">AI</span></div>
+    <a href="{% url 'dashboard' %}"><span class="icon">&#8226;</span> Dashboard</a>
+    <a class="active" href="{% url 'select_category' %}"><span class="icon">&#8226;</span> Practice interview</a>
+    <a href="{% url 'history' %}"><span class="icon">&#8226;</span> History</a>
+    <a href="{% url 'logout' %}"><span class="icon">&#8226;</span> Log out</a>
+  </aside>
+
+  <main class="main">
+    <h1>What would you like to practice?</h1>
+    <p>Pick a category — questions and rubrics are pulled from the matching knowledge base.</p>
+
+    {% if messages %}
+      {% for message in messages %}
+        <p style="color:#17B890; font-weight:600; margin-bottom:16px;">{{ message }}</p>
+      {% endfor %}
+    {% endif %}
+
+    <div class="cat-grid">
+      {% for cat in categories %}
+      <a href="{% url 'interview' cat.code %}" style="text-decoration:none; color:inherit;">
+        <div class="cat-card">
+          {% if cat.code == "Technical" %}<span class="emoji">&#128187;</span>
+          {% elif cat.code == "HR" %}<span class="emoji">&#129309;</span>
+          {% else %}<span class="emoji">&#128172;</span>
+          {% endif %}
+          <h3>{{ cat.label }}</h3>
+          <p>
+            {% if cat.code == "Technical" %}Data structures, systems, coding concepts and problem solving.
+            {% elif cat.code == "HR" %}Strengths, weaknesses, motivation and workplace scenarios.
+            {% else %}Tell-me-about-yourself, career goals and general awareness.
+            {% endif %}
+          </p>
+          <span class="pill pill-brand" style="margin-top:14px; display:inline-block;">{{ cat.count }} questions</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

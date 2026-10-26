@@ -1,0 +1,402 @@
+[
+  {
+    "id": "hr_01",
+    "category": "HR",
+    "difficulty": "easy",
+    "question": "What are your greatest strengths?",
+    "model_answer": "A strong answer names 1-2 specific strengths genuinely relevant to the role, backs each with a brief concrete example of when it was demonstrated, and ties it back to the value it would bring to this job — rather than listing generic traits like 'hardworking' with no evidence.",
+    "key_points": [
+      "specific, role-relevant strengths",
+      "backed by a concrete example",
+      "connected to value for the role",
+      "avoids vague generic claims"
+    ]
+  },
+  {
+    "id": "hr_02",
+    "category": "HR",
+    "difficulty": "easy",
+    "question": "What is your greatest weakness?",
+    "model_answer": "A good answer names a real, believable weakness (not a disguised strength like 'I work too hard'), briefly explains its impact, and focuses most of the answer on the concrete steps taken to actively improve it — showing self-awareness and growth rather than just confessing a flaw.",
+    "key_points": [
+      "genuine, believable weakness",
+      "not a disguised strength",
+      "shows active steps to improve",
+      "demonstrates self-awareness"
+    ]
+  },
+  {
+    "id": "hr_03",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "Tell me about a time you faced conflict with a team member and how you handled it.",
+    "model_answer": "A strong answer uses a clear structure (situation, action, result), stays factual and non-blaming about the other person, focuses on what the candidate personally did to resolve it (communication, compromise, seeking to understand the other view), and ends with a positive or learned outcome.",
+    "key_points": [
+      "situation-action-result structure",
+      "non-blaming tone",
+      "candidate's own actions to resolve it",
+      "positive/learned outcome"
+    ]
+  },
+  {
+    "id": "hr_04",
+    "category": "HR",
+    "difficulty": "easy",
+    "question": "Why do you want to work for this company?",
+    "model_answer": "A strong answer shows the candidate has actually researched the company — referencing something specific like its products, mission, or engineering culture — and connects it authentically to their own skills or career goals, rather than giving a generic answer that could apply to any company.",
+    "key_points": [
+      "specific company knowledge",
+      "authentic personal connection",
+      "avoids generic/copy-paste answer"
+    ]
+  },
+  {
+    "id": "hr_05",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "Where do you see yourself in 5 years?",
+    "model_answer": "A good answer shows realistic, thoughtful career ambition that plausibly aligns with growth paths at this company or in this field, balancing ambition with genuine interest in the role being applied for now, rather than an answer that suggests the candidate would leave quickly or has no real plan.",
+    "key_points": [
+      "realistic and thoughtful",
+      "aligned with the role/company",
+      "shows ambition without sounding like a flight risk"
+    ]
+  },
+  {
+    "id": "hr_06",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "Describe a situation where you failed at something. What did you learn?",
+    "model_answer": "A strong answer honestly owns a real failure without excessive self-blame or excuse-making, clearly explains what went wrong, and spends meaningful time on the specific lesson learned and how it changed the candidate's behavior afterward — showing genuine reflection rather than a superficial 'lesson.'",
+    "key_points": [
+      "honest ownership of failure",
+      "no excessive blame-shifting",
+      "clear, specific lesson learned",
+      "evidence of changed behavior"
+    ]
+  },
+  {
+    "id": "hr_07",
+    "category": "HR",
+    "difficulty": "easy",
+    "question": "How do you handle working under pressure or tight deadlines?",
+    "model_answer": "A good answer gives a concrete strategy (prioritization, breaking work into steps, clear communication about status) rather than just claiming 'I work well under pressure,' and ideally illustrates it with a brief real example of a time this was tested.",
+    "key_points": [
+      "concrete coping strategy, not just a claim",
+      "prioritization/organization mentioned",
+      "backed by a real example"
+    ]
+  },
+  {
+    "id": "hr_08",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "Why should we hire you over other candidates?",
+    "model_answer": "A strong answer avoids putting other candidates down, and instead confidently summarizes 2-3 specific skills or experiences that map directly onto what the role needs, backed by evidence — essentially a concise, confident pitch rather than a vague or overly humble non-answer.",
+    "key_points": [
+      "doesn't disparage other candidates",
+      "specific skills mapped to role needs",
+      "confident, evidence-backed pitch"
+    ]
+  },
+  {
+    "id": "hr_09",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "How do you handle criticism or negative feedback?",
+    "model_answer": "A strong answer shows the candidate listens without becoming defensive, asks clarifying questions to understand the feedback, separates the feedback from their self-worth, and takes concrete action to improve. It is best backed by a brief real example in which feedback led to a measurable improvement.",
+    "key_points": [
+      "listens without being defensive",
+      "asks questions to understand",
+      "acts on the feedback",
+      "real example of improvement"
+    ]
+  },
+  {
+    "id": "hr_10",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "Tell me about a time you showed leadership.",
+    "model_answer": "A strong answer uses a clear situation-action-result structure, describes a specific moment when the candidate took initiative or guided others (it need not be a formal manager role), explains how they motivated or organized people, and ends with a concrete result. It should focus on the candidate's own actions and also credit the team.",
+    "key_points": [
+      "specific example",
+      "candidate's own actions",
+      "motivating or organizing others",
+      "clear result",
+      "credits the team"
+    ]
+  },
+  {
+    "id": "hr_11",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "Tell me about a time you had to learn something new very quickly.",
+    "model_answer": "A good answer names the specific skill or tool, explains the deadline or pressure that required fast learning, describes the learning strategy (documentation, tutorials, asking experienced people, practicing on a small project), and shows the outcome of applying it. It demonstrates adaptability and a repeatable way of learning.",
+    "key_points": [
+      "specific skill and situation",
+      "clear learning strategy",
+      "applied it with a result",
+      "shows adaptability"
+    ]
+  },
+  {
+    "id": "hr_12",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "What would you do if you disagreed with your manager's decision?",
+    "model_answer": "A strong answer shows respect and professionalism: first try to understand the manager's reasoning, then raise concerns privately with facts and data rather than emotion, offer an alternative, and ultimately support the final decision while staying constructive. It avoids both blind agreement and public confrontation.",
+    "key_points": [
+      "seeks to understand first",
+      "raises concerns privately with facts",
+      "offers an alternative",
+      "commits to the final decision",
+      "stays respectful"
+    ]
+  },
+  {
+    "id": "hr_13",
+    "category": "HR",
+    "difficulty": "hard",
+    "question": "How would you handle a team member who is not contributing their share?",
+    "model_answer": "A good answer starts by talking to the person privately and without blame to understand the reason, because there may be workload, skill or personal issues. It then offers help or clearer task assignments, agrees on expectations, and escalates to the manager only if the problem continues after a direct conversation, keeping the focus on the team's goal.",
+    "key_points": [
+      "talk privately first",
+      "understand the reason without blame",
+      "offer support and clear expectations",
+      "escalate only if needed",
+      "focus on the team goal"
+    ]
+  },
+  {
+    "id": "hr_14",
+    "category": "HR",
+    "difficulty": "easy",
+    "question": "What is your ideal work environment?",
+    "model_answer": "A strong answer describes an environment that is genuinely compatible with the role, such as collaborative teams, clear goals, regular feedback and room to learn, without demanding unrealistic conditions. It should show flexibility and fit rather than a rigid list of requirements.",
+    "key_points": [
+      "realistic and role-compatible",
+      "mentions collaboration, feedback or learning",
+      "shows flexibility"
+    ]
+  },
+  {
+    "id": "hr_15",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "Describe a time you went above and beyond what was expected.",
+    "model_answer": "A good answer gives a specific example where the candidate voluntarily did more than required, explains why they chose to, describes the extra effort concretely, and ends with a measurable benefit to the team, customer or project. It should sound sincere and not like boasting.",
+    "key_points": [
+      "specific example",
+      "voluntary extra effort",
+      "reason for doing it",
+      "tangible result",
+      "humble tone"
+    ]
+  },
+  {
+    "id": "hr_16",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "Tell me about a mistake you made at work or in a project and how you handled it.",
+    "model_answer": "A strong answer takes clear ownership of a real mistake, explains how it was reported or corrected quickly, describes the steps taken to limit the impact on others, and states what process or habit was changed so it does not happen again. It does not blame teammates or circumstances.",
+    "key_points": [
+      "owns the mistake",
+      "acts quickly to fix and communicate",
+      "limits impact on others",
+      "changes process to prevent a repeat"
+    ]
+  },
+  {
+    "id": "hr_17",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "What are your salary expectations?",
+    "model_answer": "A strong answer shows the candidate has researched the market rate for the role, location and experience level, gives a reasonable range instead of a single fixed number, expresses flexibility based on the full package and growth opportunities, and keeps the focus on the value they will bring rather than only on money.",
+    "key_points": [
+      "has researched market rates",
+      "gives a reasonable range",
+      "shows flexibility",
+      "links to the value they bring"
+    ]
+  },
+  {
+    "id": "hr_18",
+    "category": "HR",
+    "difficulty": "easy",
+    "question": "Are you willing to relocate or work flexible hours?",
+    "model_answer": "A good answer is honest and clear about what is genuinely possible, shows willingness to be flexible where the candidate truly can be, and mentions any real constraints politely, rather than promising everything or refusing outright. It signals commitment to the role.",
+    "key_points": [
+      "honest and clear",
+      "shows flexibility",
+      "mentions constraints politely",
+      "signals commitment"
+    ]
+  },
+  {
+    "id": "hr_19",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "How do you manage stress and maintain a work-life balance?",
+    "model_answer": "A good answer names concrete habits such as planning and prioritizing, breaking large tasks down, taking breaks, exercise or hobbies, and speaking up early when workload becomes unmanageable. It shows that the candidate stays productive under pressure without burning out.",
+    "key_points": [
+      "concrete stress-management habits",
+      "planning and prioritizing",
+      "healthy outlets such as exercise or hobbies",
+      "communicates early when overloaded"
+    ]
+  },
+  {
+    "id": "hr_20",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "Tell me about a time you had to adapt to a major change.",
+    "model_answer": "A strong answer describes a specific change such as a new technology, team or process, admits the initial difficulty, explains the concrete steps taken to adjust (learning, asking questions, staying positive), and shows a successful outcome. It should demonstrate a flexible, constructive attitude rather than resistance.",
+    "key_points": [
+      "specific change",
+      "honest about initial difficulty",
+      "concrete steps to adapt",
+      "positive outcome",
+      "flexible attitude"
+    ]
+  },
+  {
+    "id": "hr_21",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "You have no work experience. Why should we hire you?",
+    "model_answer": "A strong answer is confident and honest: it acknowledges being a fresher, then points to relevant evidence such as academic projects, an internship, certifications and self-learning, highlights qualities like quick learning, adaptability and strong fundamentals, and shows enthusiasm to contribute and grow. It turns the lack of experience into potential backed by proof.",
+    "key_points": [
+      "honest about being a fresher",
+      "backed by projects, internship or certifications",
+      "highlights quick learning and adaptability",
+      "shows enthusiasm and commitment",
+      "evidence rather than empty claims"
+    ]
+  },
+  {
+    "id": "hr_22",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "Tell me about a time you worked with a difficult manager, teacher or leader.",
+    "model_answer": "A good answer describes the situation neutrally without speaking badly about the person, explains what made it difficult, focuses on what the candidate did to adapt (clarifying expectations, communicating regularly, delivering consistently), and ends with a constructive result or a lesson learned. It shows maturity and professionalism.",
+    "key_points": [
+      "neutral, non-blaming description",
+      "what the candidate did to adapt",
+      "communication and clarifying expectations",
+      "constructive outcome or lesson",
+      "professional tone"
+    ]
+  },
+  {
+    "id": "hr_23",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "How do you handle a last-minute change in priorities?",
+    "model_answer": "A strong answer shows calm flexibility: quickly clarify what has changed and why, reassess the current workload, communicate openly about what can still be delivered and what must move, re-plan the tasks, and then focus on the new priority. A brief real example where the candidate adapted successfully makes it convincing.",
+    "key_points": [
+      "stays calm and clarifies the change",
+      "reassesses the workload",
+      "communicates trade-offs openly",
+      "re-plans tasks",
+      "real example"
+    ]
+  },
+  {
+    "id": "hr_24",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "Describe a time you persuaded someone to see things your way.",
+    "model_answer": "A good answer shows influence through respect rather than pressure: the candidate listened to the other person's concerns, prepared evidence or data, framed the idea in terms of the other person's goals, stayed open to compromise, and reached an agreed outcome. It should focus on the candidate's own approach and the result.",
+    "key_points": [
+      "listened to the other person's concerns",
+      "used facts or data",
+      "linked the idea to shared goals",
+      "open to compromise",
+      "clear outcome"
+    ]
+  },
+  {
+    "id": "hr_25",
+    "category": "HR",
+    "difficulty": "easy",
+    "question": "What do you do when you do not know the answer to something?",
+    "model_answer": "A strong answer shows honesty and a method: admit the gap instead of guessing or bluffing, explain what you do know, describe how you would find the answer (documentation, research, asking someone experienced), and follow up afterwards. It shows that the candidate is trustworthy and resourceful.",
+    "key_points": [
+      "admits what they don't know honestly",
+      "does not bluff",
+      "explains how they would find the answer",
+      "asks for help or researches",
+      "follows up"
+    ]
+  },
+  {
+    "id": "hr_26",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "How do you work with someone whose personality is very different from yours?",
+    "model_answer": "A good answer shows respect and adaptability: recognizing that different styles can complement each other, trying to understand how the other person prefers to communicate and work, focusing on the shared goal rather than personal differences, and giving a short real example in which the collaboration succeeded.",
+    "key_points": [
+      "respects different working styles",
+      "adapts communication",
+      "focuses on the shared goal",
+      "sees differences as complementary",
+      "real example"
+    ]
+  },
+  {
+    "id": "hr_27",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "Tell me about a time you took the initiative to improve a process or solve a problem without being asked.",
+    "model_answer": "A strong answer describes a specific problem the candidate noticed, explains why they decided to act, details the steps they took on their own, and ends with a measurable improvement such as time saved or fewer errors. It also shows they informed others and did not overstep.",
+    "key_points": [
+      "noticed a specific problem",
+      "acted without being asked",
+      "concrete steps taken",
+      "measurable improvement",
+      "kept others informed"
+    ]
+  },
+  {
+    "id": "hr_28",
+    "category": "HR",
+    "difficulty": "hard",
+    "question": "What would you do if you were asked to do something you believed was unethical?",
+    "model_answer": "A strong answer shows integrity and sound judgment: first make sure the situation is understood correctly, then clearly and respectfully decline to take part in the unethical action, explain the concern with reference to policy or law, suggest an acceptable alternative, and escalate to a higher authority or the proper channel if the pressure continues. It shows the candidate will protect the company's and others' interests.",
+    "key_points": [
+      "clarifies the situation first",
+      "respectfully refuses the unethical act",
+      "cites policy or law",
+      "offers an alternative",
+      "escalates through proper channels if needed"
+    ]
+  },
+  {
+    "id": "hr_29",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "How do you make decisions when you do not have all the information?",
+    "model_answer": "A good answer describes a practical approach: gather the most important facts available within the time, identify the key assumptions and risks, consult people with more knowledge when possible, choose the best option with a fallback plan, and review the decision as new information arrives. It shows calm, structured judgment rather than waiting or guessing.",
+    "key_points": [
+      "gathers key available information",
+      "states assumptions and risks",
+      "consults others",
+      "decides with a backup plan",
+      "reviews as new information arrives"
+    ]
+  },
+  {
+    "id": "hr_30",
+    "category": "HR",
+    "difficulty": "medium",
+    "question": "Tell me about a time you gave constructive feedback to someone.",
+    "model_answer": "A strong answer describes a specific situation, explains how the candidate prepared and chose a private, respectful moment, focused on the behavior and its impact rather than the person, suggested concrete improvements, and followed up. It ends with a positive change and shows empathy and clear communication.",
+    "key_points": [
+      "specific situation",
+      "private and respectful setting",
+      "focus on behavior, not the person",
+      "concrete suggestions",
+      "positive result and follow-up"
+    ]
+  }
+]

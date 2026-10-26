@@ -1,0 +1,204 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ category }} interview — CareerPersona AI</title>
+<link rel="stylesheet" href="{% static 'assets/style.css' %}">
+</head>
+<body>
+
+<div class="shell">
+  <aside class="sidebar">
+    <div class="logo">CareerPersona <span class="badge">AI</span></div>
+    <a href="{% url 'dashboard' %}"><span class="icon">&#8226;</span> Dashboard</a>
+    <a class="active" href="{% url 'select_category' %}"><span class="icon">&#8226;</span> Practice interview</a>
+    <a href="{% url 'history' %}"><span class="icon">&#8226;</span> History</a>
+    <a href="{% url 'logout' %}"><span class="icon">&#8226;</span> Log out</a>
+  </aside>
+
+  <main class="main" style="max-width:720px;">
+    <span class="pill pill-brand">{{ category }} interview</span>
+    <div class="progress-track" style="margin-top:14px;">
+      <div class="progress-fill" style="width:{{ progress_percent }}%;"></div>
+    </div>
+    <p style="margin-top:-8px; font-size:.85rem; color:var(--muted);">Question {{ question_number }} of {{ total_questions }}</p>
+
+    <div class="question-card">
+      <h2>"{{ question.question_text }}"</h2>
+
+      <div class="mode-toggle" id="mode-toggle">
+        <button type="button" class="active" id="type-tab" onclick="setMode('type')">&#9997;&#65039; Type answer</button>
+        <button type="button" id="voice-tab" onclick="setMode('voice')">&#127908; Speak answer</button>
+      </div>
+
+      <form method="post" action="{% url 'submit_answer' %}" onsubmit="handleSubmit()">
+        {% csrf_token %}
+        <input type="hidden" name="question_id" value="{{ question.id }}">
+
+        <!-- Shown only in "Speak answer" mode -->
+        <div id="voice-panel" style="display:none; text-align:center; padding:6px 0 22px;">
+          <button type="button" class="mic-btn" id="mic-btn" onclick="toggleRecording()" aria-label="Start or stop recording">&#127908;</button>
+          <p id="voice-status" style="margin:14px 0 0; font-size:.9rem;">Click the microphone and start speaking.</p>
+        </div>
+
+        <div class="field">
+          <label for="answer">Your answer</label>
+          <textarea id="answer" name="answer" rows="7" placeholder="Start typing your answer here..." required></textarea>
+          <div class="hint" id="answer-hint">Take your time — there's no timer. Feedback for all questions is shown at the end.</div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; margin-top:10px;">
+          <a href="{% url 'select_category' %}" class="btn btn-ghost">&#8592; Back</a>
+          <button type="submit" class="btn btn-primary" id="submit-btn">
+            {% if is_last %}Finish &amp; see results &#8594;{% else %}Next question &#8594;{% endif %}
+          </button>
+        </div>
+      </form>
+
+      <script>
+        var isLast = {{ is_last|yesno:"true,false" }};
+
+        // ---- Speech-to-text using the browser's built-in Web Speech API ----
+        // Words appear in the answer box LIVE while you speak. The microphone only
+        // ever touches the tentative words at the very END of the box; everything
+        // before them (including anything you typed or edited) is left alone.
+        var SpeechRecognitionAPI = window.SpeechRecognition || window.webkitSpeechRecognition;
+        var recognition = null;
+        var recording = false;
+        var lastInterim = '';   // the tentative words currently shown at the end of the box
+
+        // If this browser can't do speech recognition (e.g. Firefox), hide the voice option.
+        if (!SpeechRecognitionAPI) {
+          document.getElementById('mode-toggle').style.display = 'none';
+        }
+
+        function setMode(mode) {
+          document.getElementById('type-tab').classList.toggle('active', mode === 'type');
+          document.getElementById('voice-tab').classList.toggle('active', mode === 'voice');
+          document.getElementById('voice-panel').style.display = (mode === 'voice') ? 'block' : 'none';
+          if (mode === 'type' && recording) { stopRecording(); }
+        }
+
+        function setStatus(message) {
+          document.getElementById('voice-status').textContent = message;
+        }
+
+        function joinWithSpace(value, words) {
+          words = words.trim();
+          if (!words) { return value; }
+          var separator = (value && !/\s$/.test(value)) ? ' ' : '';
+          return value + separator + words;
+        }
+
+        function updateAnswerLive(finalWords, interimWords) {
+          var textarea = document.getElementById('answer');
+          var value = textarea.value;
+          var caret = textarea.selectionStart;
+          var wasAtEnd = caret >= value.length;
+
+          // Take away the tentative words we showed last time (only if still untouched at the end)
+          if (lastInterim && value.endsWith(lastInterim)) {
+            value = value.slice(0, value.length - lastInterim.length);
+          }
+          lastInterim = '';
+
+          // Add words the browser is now sure about
+          value = joinWithSpace(value, finalWords);
+
+          // Show the words it is still working on, so you see text appear as you speak
+          var tentative = interimWords.trim();
+          if (tentative) {
+            var withTentative = joinWithSpace(value, tentative);
+            lastInterim = withTentative.slice(value.length);
+            value = withTentative;
+          }
+
+          textarea.value = value;
+          // If you were editing in the middle, keep your cursor where it was
+          if (!wasAtEnd) { textarea.setSelectionRange(caret, caret); }
+        }
+
+        function handleUserTyping() {
+          // You typed. Keep the tentative words as normal text and drop the sentence
+          // the microphone was still working on, so nothing is duplicated or erased.
+          if (lastInterim) {
+            lastInterim = '';
+            if (recognition) { try { recognition.abort(); } catch (e) {} }
+          }
+        }
+        document.getElementById('answer').addEventListener('input', handleUserTyping);
+
+        function toggleRecording() {
+          if (recording) { stopRecording(); } else { startRecording(); }
+        }
+
+        function startRecording() {
+          recognition = new SpeechRecognitionAPI();
+          recognition.lang = 'en-IN';          // Indian English; change to 'en-US' if you prefer
+          recognition.continuous = true;       // keep listening until you click stop
+          recognition.interimResults = true;   // send words while they are being spoken
+
+          recognition.onresult = function (event) {
+            var finalWords = '';
+            var interimWords = '';
+            for (var i = event.resultIndex; i < event.results.length; i++) {
+              var piece = event.results[i][0].transcript;
+              if (event.results[i].isFinal) { finalWords += ' ' + piece; }
+              else { interimWords += ' ' + piece; }
+            }
+            updateAnswerLive(finalWords, interimWords);
+          };
+
+          recognition.onerror = function (event) {
+            if (event.error === 'no-speech' || event.error === 'aborted') { return; }  // harmless
+            recording = false;
+            document.getElementById('mic-btn').classList.remove('recording');
+            if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
+              setStatus('Microphone blocked. Click the lock icon next to the web address, allow the microphone, then try again.');
+            } else if (event.error === 'audio-capture') {
+              setStatus('No microphone was found on this computer.');
+            } else if (event.error === 'network') {
+              setStatus('Voice recognition needs an internet connection.');
+            } else {
+              setStatus('Voice error: ' + event.error);
+            }
+          };
+
+          recognition.onend = function () {
+            lastInterim = '';   // anything still showing becomes normal text
+            // Chrome stops by itself after a long pause; restart while you are still recording.
+            if (recording) { try { recognition.start(); } catch (e) {} }
+          };
+
+          try {
+            recognition.start();
+            recording = true;
+            document.getElementById('mic-btn').classList.add('recording');
+            setStatus('Listening... speak naturally. You can type to edit at any time. Click the microphone to stop.');
+          } catch (e) {
+            setStatus('Could not start the microphone. Please try again.');
+          }
+        }
+
+        function stopRecording() {
+          recording = false;
+          if (recognition) { recognition.stop(); }
+          document.getElementById('mic-btn').classList.remove('recording');
+          setStatus('Stopped. You can edit the text below, or click the microphone to add more.');
+        }
+
+        function handleSubmit() {
+          if (recording) { stopRecording(); }
+          var btn = document.getElementById('submit-btn');
+          btn.disabled = true;
+          btn.textContent = isLast ? 'Evaluating all your answers... (30-60 seconds)' : 'Saving...';
+        }
+      </script>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

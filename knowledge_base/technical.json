@@ -1,0 +1,403 @@
+[
+  {
+    "id": "tech_01",
+    "category": "Technical",
+    "difficulty": "easy",
+    "question": "What is the difference between a process and a thread?",
+    "model_answer": "A process is an independent program in execution with its own memory space, while a thread is a smaller unit of execution within a process that shares the same memory space with other threads of that process. Multiple threads within a process can run concurrently and communicate easily since they share memory, but processes are isolated from each other and communicate via inter-process communication (IPC).",
+    "key_points": [
+      "process has its own memory space",
+      "thread shares memory within a process",
+      "threads are lighter-weight than processes",
+      "IPC needed for process communication"
+    ]
+  },
+  {
+    "id": "tech_02",
+    "category": "Technical",
+    "difficulty": "easy",
+    "question": "What is the difference between SQL and NoSQL databases?",
+    "model_answer": "SQL databases are relational, store data in structured tables with fixed schemas, and use SQL for querying (e.g., MySQL, PostgreSQL). NoSQL databases are non-relational, allow flexible or schema-less data models (document, key-value, graph, column), and are typically chosen for scalability and handling unstructured data (e.g., MongoDB, Cassandra).",
+    "key_points": [
+      "SQL = relational, fixed schema",
+      "NoSQL = flexible schema",
+      "examples of each",
+      "when to choose which"
+    ]
+  },
+  {
+    "id": "tech_03",
+    "category": "Technical",
+    "difficulty": "medium",
+    "question": "Explain how a hash table works and why it offers fast lookups.",
+    "model_answer": "A hash table stores key-value pairs by passing the key through a hash function that computes an index into an underlying array. To look up a value, the same hash function is applied to the key to jump directly to the correct index, giving average O(1) lookup time instead of scanning every element. Collisions, where two keys hash to the same index, are handled using techniques like chaining (linked lists at each index) or open addressing.",
+    "key_points": [
+      "hash function maps key to index",
+      "O(1) average lookup",
+      "collision handling (chaining/open addressing)"
+    ]
+  },
+  {
+    "id": "tech_04",
+    "category": "Technical",
+    "difficulty": "medium",
+    "question": "What is the difference between REST and GraphQL APIs?",
+    "model_answer": "REST exposes multiple fixed endpoints, each returning a predefined data structure, which can lead to over-fetching or under-fetching data. GraphQL exposes a single endpoint where the client specifies exactly which fields it needs in the query, avoiding over/under-fetching, though it adds complexity on the server side to resolve flexible queries.",
+    "key_points": [
+      "REST = multiple fixed endpoints",
+      "GraphQL = single flexible endpoint",
+      "over/under-fetching tradeoff"
+    ]
+  },
+  {
+    "id": "tech_05",
+    "category": "Technical",
+    "difficulty": "medium",
+    "question": "What is Retrieval-Augmented Generation (RAG) and why is it used with LLMs?",
+    "model_answer": "RAG combines a retrieval step with an LLM's generation step: relevant documents are first fetched from a knowledge base (usually via vector similarity search) and then passed into the LLM's prompt as context before it generates a response. This grounds the model's output in real, specific information rather than relying only on what it memorized during training, which reduces hallucination and lets the system stay up to date without retraining.",
+    "key_points": [
+      "retrieval step before generation",
+      "grounds answer in real documents",
+      "reduces hallucination",
+      "no retraining needed to update knowledge"
+    ]
+  },
+  {
+    "id": "tech_06",
+    "category": "Technical",
+    "difficulty": "easy",
+    "question": "What is the time complexity of binary search and why?",
+    "model_answer": "Binary search runs in O(log n) time because it repeatedly halves the search space: it checks the middle element of a sorted array, and depending on whether the target is smaller or larger, discards one half of the remaining elements each step, so the number of comparisons needed grows logarithmically with input size.",
+    "key_points": [
+      "O(log n)",
+      "requires sorted input",
+      "halves search space each step"
+    ]
+  },
+  {
+    "id": "tech_07",
+    "category": "Technical",
+    "difficulty": "hard",
+    "question": "How would you design a system to handle 1 million concurrent users on a web application?",
+    "model_answer": "Key strategies include horizontal scaling behind a load balancer so traffic is distributed across many application servers, caching frequent reads (e.g., Redis) to reduce database load, database read replicas and sharding for write-heavy scale, using a CDN for static assets, and asynchronous/queue-based processing for non-urgent tasks so the request path stays fast. Stateless application servers make horizontal scaling straightforward since any server can handle any request.",
+    "key_points": [
+      "load balancing + horizontal scaling",
+      "caching layer",
+      "database scaling (replicas/sharding)",
+      "CDN for static content",
+      "stateless servers"
+    ]
+  },
+  {
+    "id": "tech_08",
+    "category": "Technical",
+    "difficulty": "easy",
+    "question": "What is the difference between supervised and unsupervised learning?",
+    "model_answer": "Supervised learning trains a model on labeled data, where each input has a known correct output, so the model learns to map inputs to outputs (e.g., classification, regression). Unsupervised learning works with unlabeled data and tries to find hidden patterns or structure on its own, such as grouping similar data points together (clustering) or reducing dimensionality.",
+    "key_points": [
+      "supervised = labeled data",
+      "unsupervised = unlabeled data, finds patterns",
+      "example tasks for each"
+    ]
+  },
+  {
+    "id": "tech_09",
+    "category": "Technical",
+    "difficulty": "easy",
+    "question": "What are the four pillars of object-oriented programming?",
+    "model_answer": "The four pillars are encapsulation (bundling data and methods together and restricting direct access to the data), abstraction (exposing only the essential features and hiding implementation details), inheritance (a class acquiring the properties and behavior of a parent class to reuse code), and polymorphism (the same interface behaving differently depending on the object, such as method overriding or overloading).",
+    "key_points": [
+      "encapsulation",
+      "abstraction",
+      "inheritance",
+      "polymorphism",
+      "a short explanation or example for each"
+    ]
+  },
+  {
+    "id": "tech_10",
+    "category": "Technical",
+    "difficulty": "medium",
+    "question": "What is normalization in databases and why is it used?",
+    "model_answer": "Normalization is the process of organizing a database into well-structured tables to reduce data redundancy and avoid update, insert and delete anomalies. It works by splitting data into related tables and applying normal forms such as 1NF (atomic values), 2NF (no partial dependency on a composite key) and 3NF (no transitive dependency). The trade-off is that highly normalized data may need more joins, which can slow some read queries.",
+    "key_points": [
+      "reduces redundancy",
+      "prevents update/insert/delete anomalies",
+      "normal forms 1NF, 2NF, 3NF",
+      "trade-off of more joins"
+    ]
+  },
+  {
+    "id": "tech_11",
+    "category": "Technical",
+    "difficulty": "medium",
+    "question": "Explain the ACID properties of a database transaction.",
+    "model_answer": "ACID stands for Atomicity (a transaction either completes fully or not at all), Consistency (a transaction moves the database from one valid state to another, respecting all rules and constraints), Isolation (concurrent transactions do not interfere with each other's intermediate results), and Durability (once a transaction is committed, its changes persist even after a crash). A bank transfer is a common example: money must leave one account and arrive in the other, or neither.",
+    "key_points": [
+      "atomicity",
+      "consistency",
+      "isolation",
+      "durability",
+      "a real example such as a bank transfer"
+    ]
+  },
+  {
+    "id": "tech_12",
+    "category": "Technical",
+    "difficulty": "easy",
+    "question": "What is the difference between a stack and a queue?",
+    "model_answer": "A stack is a Last-In-First-Out (LIFO) structure where elements are added and removed from the same end (push and pop), such as the browser back button or the function call stack. A queue is a First-In-First-Out (FIFO) structure where elements are added at the rear (enqueue) and removed from the front (dequeue), such as a print queue or task scheduling.",
+    "key_points": [
+      "stack is LIFO",
+      "queue is FIFO",
+      "operations push/pop and enqueue/dequeue",
+      "real-world example of each"
+    ]
+  },
+  {
+    "id": "tech_13",
+    "category": "Technical",
+    "difficulty": "hard",
+    "question": "What is a deadlock and how can it be prevented?",
+    "model_answer": "A deadlock occurs when two or more processes are each waiting for resources held by the others, so none of them can proceed. It requires four conditions at once: mutual exclusion, hold and wait, no preemption, and circular wait. Prevention works by breaking at least one condition, for example by requiring all resources to be requested at once, allowing preemption, or imposing a fixed global order for acquiring resources to avoid circular wait.",
+    "key_points": [
+      "processes waiting on each other's resources",
+      "four necessary conditions (mutual exclusion, hold and wait, no preemption, circular wait)",
+      "prevention by breaking one condition",
+      "example such as ordering resource acquisition"
+    ]
+  },
+  {
+    "id": "tech_14",
+    "category": "Technical",
+    "difficulty": "medium",
+    "question": "What is the difference between TCP and UDP?",
+    "model_answer": "TCP is connection-oriented and reliable: it establishes a connection with a handshake, guarantees ordered delivery, retransmits lost packets and controls congestion, which makes it suitable for web pages, email and file transfer. UDP is connectionless and does not guarantee delivery or order, but it has much lower overhead and latency, which suits live video, voice calls, gaming and DNS lookups.",
+    "key_points": [
+      "TCP connection-oriented and reliable",
+      "UDP connectionless and faster",
+      "TCP ordering and retransmission versus UDP no guarantees",
+      "use cases for each"
+    ]
+  },
+  {
+    "id": "tech_15",
+    "category": "Technical",
+    "difficulty": "medium",
+    "question": "What is overfitting in machine learning and how can you reduce it?",
+    "model_answer": "Overfitting happens when a model learns the training data too closely, including its noise, so it performs very well on training data but poorly on new, unseen data. It can be reduced by using more training data, simplifying the model, applying regularization (L1 or L2), using dropout in neural networks, stopping training early, and validating with techniques like cross-validation.",
+    "key_points": [
+      "good on training data but poor on unseen data",
+      "learns noise",
+      "remedies such as more data, regularization, cross-validation, simpler model, early stopping"
+    ]
+  },
+  {
+    "id": "tech_16",
+    "category": "Technical",
+    "difficulty": "medium",
+    "question": "What is a database index and what are its trade-offs?",
+    "model_answer": "A database index is a separate data structure, commonly a B-tree, that lets the database find rows quickly without scanning the entire table, much like the index at the back of a book. Indexes make read and search queries much faster, but they take extra storage and slow down writes (inserts, updates and deletes) because the index must be updated too, so they should be created on columns that are frequently searched or joined.",
+    "key_points": [
+      "speeds up lookups without a full table scan",
+      "usually a B-tree",
+      "costs extra storage",
+      "slows inserts, updates and deletes",
+      "index frequently searched columns"
+    ]
+  },
+  {
+    "id": "tech_17",
+    "category": "Technical",
+    "difficulty": "easy",
+    "question": "What is recursion and what are its risks?",
+    "model_answer": "Recursion is a technique where a function calls itself to solve a smaller version of the same problem, and it needs a base case that stops the calls. It makes problems like factorials, tree traversal and divide-and-conquer algorithms easier to express, but without a correct base case it causes infinite recursion and a stack overflow, and it can use more memory and run slower than an equivalent loop.",
+    "key_points": [
+      "function calling itself",
+      "base case required",
+      "example such as factorial or tree traversal",
+      "risk of stack overflow and extra memory"
+    ]
+  },
+  {
+    "id": "tech_18",
+    "category": "Technical",
+    "difficulty": "easy",
+    "question": "What is the difference between a list and a tuple in Python?",
+    "model_answer": "A list is mutable, so its elements can be changed, added or removed after creation, and it is written with square brackets. A tuple is immutable, so it cannot be changed once created, and it is written with parentheses. Tuples are slightly faster and use less memory, can be used as dictionary keys, and are suited to fixed collections of values, while lists suit data that changes.",
+    "key_points": [
+      "list is mutable",
+      "tuple is immutable",
+      "syntax difference",
+      "tuples can be dictionary keys and are slightly faster",
+      "when to use each"
+    ]
+  },
+  {
+    "id": "tech_19",
+    "category": "Technical",
+    "difficulty": "easy",
+    "question": "What is Git and why is branching useful?",
+    "model_answer": "Git is a distributed version control system that tracks changes to code over time, lets many developers collaborate, and allows going back to earlier versions. Branching lets a developer work on a new feature or bug fix in isolation without affecting the stable main code; once the work is tested, the branch is merged back, which supports parallel work and safer releases.",
+    "key_points": [
+      "version control system",
+      "tracks history and enables collaboration",
+      "branches isolate work",
+      "merging changes back to main"
+    ]
+  },
+  {
+    "id": "tech_20",
+    "category": "Technical",
+    "difficulty": "hard",
+    "question": "What is the difference between precision and recall?",
+    "model_answer": "Precision is the fraction of the items a model predicted as positive that are actually positive (true positives divided by true positives plus false positives), so it measures how trustworthy the positive predictions are. Recall is the fraction of all actual positives that the model correctly found (true positives divided by true positives plus false negatives), so it measures how many real positives were missed. Precision matters when false alarms are costly, such as spam filtering, and recall matters when missing a case is costly, such as disease detection; the F1 score balances the two.",
+    "key_points": [
+      "precision = TP / (TP + FP)",
+      "recall = TP / (TP + FN)",
+      "precision is about false positives, recall is about false negatives",
+      "example of when each matters",
+      "F1 score balances them"
+    ]
+  },
+  {
+    "id": "tech_21",
+    "category": "Technical",
+    "difficulty": "easy",
+    "question": "What is the difference between the GET and POST HTTP methods?",
+    "model_answer": "GET is used to request data from a server; its parameters are sent in the URL, it should not change anything on the server, it can be cached and bookmarked, and the URL length is limited, so it should never carry sensitive data. POST is used to send data to the server to create or submit something, such as a login form or a new record; the data travels in the request body, it is not cached, and it has no practical size limit.",
+    "key_points": [
+      "GET retrieves data with parameters in the URL",
+      "POST sends data in the request body",
+      "GET is cacheable and should not change server state",
+      "POST suits forms, logins and creating data",
+      "sensitive data should not go in a URL"
+    ]
+  },
+  {
+    "id": "tech_22",
+    "category": "Technical",
+    "difficulty": "easy",
+    "question": "What is the difference between a primary key and a foreign key?",
+    "model_answer": "A primary key uniquely identifies each row in a table, so it cannot be duplicated or null, and a table has only one. A foreign key is a column in one table that refers to the primary key of another table, which creates a relationship between the tables and enforces referential integrity, so you cannot reference a row that does not exist. A foreign key column can contain duplicate values.",
+    "key_points": [
+      "primary key uniquely identifies a row",
+      "primary key is unique and not null",
+      "foreign key references another table's primary key",
+      "enforces referential integrity",
+      "example such as customer and orders tables"
+    ]
+  },
+  {
+    "id": "tech_23",
+    "category": "Technical",
+    "difficulty": "medium",
+    "question": "Explain the different types of SQL joins.",
+    "model_answer": "An INNER JOIN returns only the rows that have matching values in both tables. A LEFT JOIN returns all rows from the left table plus the matching rows from the right, with NULLs where there is no match. A RIGHT JOIN does the opposite, keeping all rows from the right table. A FULL OUTER JOIN returns all rows from both tables, with NULLs where either side has no match. For example, a LEFT JOIN of customers to orders lists every customer, including those who have never ordered.",
+    "key_points": [
+      "INNER JOIN returns only matching rows",
+      "LEFT JOIN keeps all left rows",
+      "RIGHT JOIN keeps all right rows",
+      "FULL OUTER JOIN keeps all rows from both",
+      "NULLs appear where there is no match",
+      "a simple example"
+    ]
+  },
+  {
+    "id": "tech_24",
+    "category": "Technical",
+    "difficulty": "easy",
+    "question": "What is the difference between a compiler and an interpreter?",
+    "model_answer": "A compiler translates the whole source program into machine code or bytecode before it runs, so execution is usually faster and many errors are reported at compile time; C and C++ are typical examples. An interpreter reads and executes the program line by line, which makes debugging and quick testing easier but is usually slower; Python and JavaScript are typical examples. Many languages combine both, for instance Python compiles to bytecode that is then interpreted.",
+    "key_points": [
+      "compiler translates the whole program first",
+      "interpreter executes line by line",
+      "compiled code usually runs faster",
+      "interpreters make debugging easier",
+      "examples of each, and that some languages use both"
+    ]
+  },
+  {
+    "id": "tech_25",
+    "category": "Technical",
+    "difficulty": "hard",
+    "question": "What is the bias-variance trade-off in machine learning?",
+    "model_answer": "Bias is the error caused by a model being too simple to capture the real pattern, which leads to underfitting. Variance is the error caused by a model being too sensitive to the particular training data, which leads to overfitting. Making a model more complex lowers bias but raises variance, and making it simpler does the opposite, so the goal is to find the balance that minimizes total error on new data, using tools such as regularization, more training data and cross-validation.",
+    "key_points": [
+      "bias means underfitting from an over-simple model",
+      "variance means overfitting from sensitivity to training data",
+      "reducing one tends to increase the other",
+      "goal is the balance that minimizes error on unseen data",
+      "regularization, more data or cross-validation help"
+    ]
+  },
+  {
+    "id": "tech_26",
+    "category": "Technical",
+    "difficulty": "medium",
+    "question": "Compare quicksort and merge sort.",
+    "model_answer": "Both are divide-and-conquer sorting algorithms. Quicksort picks a pivot and partitions the data around it; it averages O(n log n) and is usually very fast in practice and sorts in place, but its worst case is O(n squared) when pivots are chosen badly and it is not stable. Merge sort splits the data in half, sorts each half and merges them; it always runs in O(n log n) and is stable, but it needs O(n) extra memory, so it is a good choice for linked lists and for sorting data too large for memory.",
+    "key_points": [
+      "both divide and conquer",
+      "quicksort average O(n log n), worst case O(n squared)",
+      "merge sort always O(n log n)",
+      "merge sort is stable but needs extra memory",
+      "quicksort is in place and fast in practice"
+    ]
+  },
+  {
+    "id": "tech_27",
+    "category": "Technical",
+    "difficulty": "medium",
+    "question": "What is the difference between a virtual machine and a container such as Docker?",
+    "model_answer": "A virtual machine emulates a whole computer using a hypervisor, and each VM runs its own full guest operating system, so it is heavy, slower to start and uses more resources but offers strong isolation. A container shares the host operating system's kernel and packages only the application and its dependencies, so it is lightweight, starts in seconds and is easy to move between environments, which makes it popular for consistent deployment and microservices.",
+    "key_points": [
+      "VM includes a full guest operating system via a hypervisor",
+      "container shares the host kernel",
+      "containers are lighter and start faster",
+      "VMs give stronger isolation",
+      "containers give consistent deployment"
+    ]
+  },
+  {
+    "id": "tech_28",
+    "category": "Technical",
+    "difficulty": "medium",
+    "question": "How does HTTPS keep data secure?",
+    "model_answer": "HTTPS is HTTP running over TLS encryption. The server proves its identity with a certificate issued by a trusted certificate authority, then the browser and server perform a handshake using asymmetric cryptography to agree on a shared session key. After that, the data is encrypted with fast symmetric encryption. This gives confidentiality (nobody can read the data), integrity (it cannot be altered unnoticed) and authentication (you are talking to the real site), protecting against eavesdropping and man-in-the-middle attacks.",
+    "key_points": [
+      "HTTP over TLS",
+      "server certificate from a trusted authority",
+      "handshake using asymmetric cryptography to agree a session key",
+      "data then encrypted with symmetric encryption",
+      "confidentiality, integrity and authentication"
+    ]
+  },
+  {
+    "id": "tech_29",
+    "category": "Technical",
+    "difficulty": "easy",
+    "question": "What is the difference between authentication and authorization?",
+    "model_answer": "Authentication verifies who a user is, for example with a password, a one-time code or a fingerprint. Authorization decides what that verified user is allowed to do, such as which pages, data or actions they can access, usually through roles and permissions. Authentication always comes first: for example, you log in to prove your identity, and then the system checks whether your account is allowed to open the admin page.",
+    "key_points": [
+      "authentication verifies identity",
+      "authorization controls permissions",
+      "authentication happens first",
+      "example such as login and then role-based access"
+    ]
+  },
+  {
+    "id": "tech_30",
+    "category": "Technical",
+    "difficulty": "medium",
+    "question": "What are embeddings and how are they used in semantic search?",
+    "model_answer": "An embedding is a list of numbers (a vector) that represents the meaning of a piece of text, produced by a model so that texts with similar meaning end up close together in vector space. In semantic search, the query and the stored documents are both converted to embeddings, and the system returns the documents whose vectors are nearest to the query, usually measured with cosine similarity, so results match meaning rather than exact keywords. The same idea powers retrieval in RAG systems, where the retrieved documents are given to an LLM as context.",
+    "key_points": [
+      "vector that represents meaning",
+      "similar meaning means nearby vectors",
+      "search by similarity, for example cosine similarity",
+      "matches meaning rather than keywords",
+      "used in RAG to retrieve context for an LLM"
+    ]
+  }
+]

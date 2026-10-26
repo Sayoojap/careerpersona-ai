@@ -1,0 +1,57 @@
+{
+  "description": "Scoring rubric used by the LLM to evaluate every candidate answer. Each dimension is scored 0-100.",
+  "dimensions": [
+    {
+      "name": "Relevance",
+      "what_it_checks": "Does the answer actually address what the question asked, without going off-topic?",
+      "score_bands": {
+        "90-100": "Directly answers the question, stays fully on-topic throughout.",
+        "60-89": "Mostly on-topic but includes some irrelevant or tangential content.",
+        "30-59": "Partially answers the question; misses a key part of what was asked.",
+        "0-29": "Does not address the question, or answers a different question entirely."
+      }
+    },
+    {
+      "name": "Content Quality",
+      "what_it_checks": "Is the information factually correct, complete, and does it cover the key points found in the model answer / retrieved rubric chunk?",
+      "score_bands": {
+        "90-100": "Covers all key points accurately, shows depth of understanding.",
+        "60-89": "Covers most key points, minor inaccuracies or gaps.",
+        "30-59": "Covers only some key points, or contains a factual error.",
+        "0-29": "Mostly incorrect, very shallow, or missing almost all key points."
+      }
+    },
+    {
+      "name": "Communication",
+      "what_it_checks": "Is the answer clearly structured, well-worded, and easy to follow (grammar, clarity, organization)?",
+      "score_bands": {
+        "90-100": "Clear, well-organized, concise, easy to follow.",
+        "60-89": "Understandable but somewhat rambling, repetitive, or unpolished.",
+        "30-59": "Hard to follow; disorganized or overly vague.",
+        "0-29": "Very unclear, incoherent, or too short to assess."
+      }
+    },
+    {
+      "name": "Confidence",
+      "what_it_checks": "Does the answer sound assured and decisive rather than hedged, uncertain, or apologetic? (For voice answers, this also considers tone/pace from the transcript's phrasing; for text, it looks at word choice like excessive qualifiers - 'maybe', 'I'm not sure', 'sort of'.)",
+      "score_bands": {
+        "90-100": "Direct, assured phrasing; no unnecessary hedging.",
+        "60-89": "Mostly assured with occasional hedging phrases.",
+        "30-59": "Frequent hedging or uncertain phrasing throughout.",
+        "0-29": "Very hesitant, apologetic, or self-undermining tone."
+      }
+    },
+    {
+      "name": "Technical Knowledge",
+      "what_it_checks": "For Technical-category questions: correctness of concepts, terminology, and reasoning. For HR/General questions: soundness of judgment and self-awareness instead. This dimension is weighted 0 for pure HR/General questions where it doesn't apply.",
+      "score_bands": {
+        "90-100": "Uses correct terminology, sound reasoning, accurate technical detail.",
+        "60-89": "Mostly correct with minor technical slips.",
+        "30-59": "Several technical inaccuracies or shaky reasoning.",
+        "0-29": "Fundamentally incorrect technical understanding."
+      }
+    }
+  ],
+  "overall_score_formula": "Simple average of the 4-5 applicable dimensions for that question category.",
+  "feedback_generation_rule": "The LLM should always: 1) name one specific thing the candidate did well, 2) name one specific thing to improve, 3) suggest a concrete way to improve it (example, restructure, add detail, etc). Feedback must reference the candidate's actual answer, not be generic."
+}

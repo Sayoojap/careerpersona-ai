@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in — CareerPersona AI</title>
+<link rel="stylesheet" href="{% static 'assets/style.css' %}">
+</head>
+<body>
+
+<div class="auth-wrap">
+  <div style="width:100%; max-width:400px;">
+    <div class="top-logo"><a href="{% url 'home' %}" class="logo">CareerPersona <span class="badge">AI</span></a></div>
+    <div class="card auth-card">
+      <h2 style="text-align:center;">Welcome back</h2>
+      <p style="text-align:center; margin-bottom:26px;">Log in to continue your practice interviews.</p>
+
+      {% if messages %}
+        {% for message in messages %}
+          <p style="color:#E24949; text-align:center; margin-bottom:16px;">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+
+      <form method="post">
+        {% csrf_token %}
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="••••••••" required>
+        </div>
+        <button class="btn btn-primary btn-block btn-lg" type="submit">Log in</button>
+      </form>
+
+      <p style="text-align:center; margin-top:18px; font-size:.88rem;">
+        New here? <a href="{% url 'register' %}">Create an account</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

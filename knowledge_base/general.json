@@ -1,0 +1,397 @@
+[
+  {
+    "id": "gen_01",
+    "category": "General",
+    "difficulty": "easy",
+    "question": "Tell me about yourself.",
+    "model_answer": "A strong answer gives a brief, well-structured summary covering background (education/experience relevant to the role), 1-2 key strengths or achievements, and why the candidate is interested in this opportunity now — kept concise (roughly 60-90 seconds spoken), not a full life story.",
+    "key_points": [
+      "concise, structured summary",
+      "relevant background only",
+      "ties to current opportunity",
+      "not overly long"
+    ]
+  },
+  {
+    "id": "gen_02",
+    "category": "General",
+    "difficulty": "easy",
+    "question": "What are your career goals?",
+    "model_answer": "A good answer states clear, realistic short and long-term goals that logically connect to the role being applied for, showing the candidate has thought about their direction rather than giving a vague 'I just want to grow' answer.",
+    "key_points": [
+      "clear short and long-term goals",
+      "connected to the role",
+      "shows genuine forethought"
+    ]
+  },
+  {
+    "id": "gen_03",
+    "category": "General",
+    "difficulty": "medium",
+    "question": "What do you know about current trends in your field?",
+    "model_answer": "A strong answer names 1-2 specific, accurate current trends (not outdated or vague ones), briefly explains why they matter, and ideally connects them to the candidate's own learning or interest — demonstrating genuine engagement with the field rather than a memorized buzzword list.",
+    "key_points": [
+      "specific and accurate trends",
+      "explains why it matters",
+      "personal connection/interest shown"
+    ]
+  },
+  {
+    "id": "gen_04",
+    "category": "General",
+    "difficulty": "easy",
+    "question": "How do you stay updated with new skills or knowledge in your area?",
+    "model_answer": "A good answer names concrete, credible learning habits (specific courses, communities, projects, reading sources) rather than a vague 'I read articles online,' showing an active and consistent approach to self-improvement.",
+    "key_points": [
+      "concrete, named learning sources/habits",
+      "shows consistency, not a one-off effort"
+    ]
+  },
+  {
+    "id": "gen_05",
+    "category": "General",
+    "difficulty": "medium",
+    "question": "Describe a project you are proud of and your role in it.",
+    "model_answer": "A strong answer clearly explains the project's goal, the candidate's specific individual contribution (not just 'the team did'), any challenges overcome, and the outcome or impact — giving enough concrete detail that the interviewer can tell the candidate genuinely did the work described.",
+    "key_points": [
+      "clear goal explained",
+      "candidate's specific individual role",
+      "challenge overcome",
+      "concrete outcome/impact"
+    ]
+  },
+  {
+    "id": "gen_06",
+    "category": "General",
+    "difficulty": "easy",
+    "question": "What motivates you to do your best work?",
+    "model_answer": "A good answer gives a genuine, specific motivator (e.g., solving real problems, learning new things, seeing user impact) rather than a generic answer like 'money' or 'I just like working hard,' and ideally ties it to an example.",
+    "key_points": [
+      "genuine and specific motivator",
+      "not purely generic/surface-level",
+      "backed by an example if possible"
+    ]
+  },
+  {
+    "id": "gen_07",
+    "category": "General",
+    "difficulty": "medium",
+    "question": "How do you prioritize tasks when you have multiple deadlines?",
+    "model_answer": "A strong answer describes an actual method (e.g., urgency/importance matrix, breaking big tasks down, communicating early if something will slip) rather than a vague 'I just manage my time well,' showing a repeatable, practical process.",
+    "key_points": [
+      "names an actual prioritization method",
+      "practical and repeatable",
+      "mentions proactive communication if slipping"
+    ]
+  },
+  {
+    "id": "gen_08",
+    "category": "General",
+    "difficulty": "easy",
+    "question": "Do you have any questions for us?",
+    "model_answer": "A strong answer always has at least one or two thoughtful, specific questions prepared — about the team, growth opportunities, or how success is measured in the role — rather than saying 'no, I think you covered everything,' which can come across as disengaged.",
+    "key_points": [
+      "always has a prepared question",
+      "specific and thoughtful, not generic",
+      "shows genuine engagement"
+    ]
+  },
+  {
+    "id": "gen_09",
+    "category": "General",
+    "difficulty": "easy",
+    "question": "What are your hobbies, and how do they help you professionally?",
+    "model_answer": "A good answer names genuine interests and connects them to useful qualities such as discipline, creativity, teamwork or problem solving, ideally with a brief example. It shows the candidate as a well-rounded person without letting the answer drift away from the job.",
+    "key_points": [
+      "genuine hobbies",
+      "linked to professional skills",
+      "brief example",
+      "stays concise"
+    ]
+  },
+  {
+    "id": "gen_10",
+    "category": "General",
+    "difficulty": "easy",
+    "question": "Why did you choose your field of study?",
+    "model_answer": "A strong answer gives an authentic reason, such as a particular experience, interest or problem that sparked the choice, describes what the candidate has done since to build skills in it, and links it to their career direction. It shows commitment instead of a vague 'I like computers'.",
+    "key_points": [
+      "authentic reason",
+      "specific trigger or experience",
+      "steps taken to build skills",
+      "connection to career goals"
+    ]
+  },
+  {
+    "id": "gen_11",
+    "category": "General",
+    "difficulty": "easy",
+    "question": "Do you prefer working alone or in a team?",
+    "model_answer": "A balanced answer explains that the candidate can do both, gives an example of when each works best (independent focus work versus collaboration for diverse ideas), and shows awareness that most jobs need both. It avoids claiming to be purely one or the other.",
+    "key_points": [
+      "comfortable with both",
+      "when each is best",
+      "example",
+      "awareness the role needs both"
+    ]
+  },
+  {
+    "id": "gen_12",
+    "category": "General",
+    "difficulty": "medium",
+    "question": "What is your biggest achievement so far?",
+    "model_answer": "A strong answer picks one specific achievement, explains the challenge, describes the candidate's own actions, and quantifies the result where possible (marks, users, time saved, accuracy). It also states what the achievement taught them, without exaggeration.",
+    "key_points": [
+      "one specific achievement",
+      "the challenge",
+      "candidate's own actions",
+      "measurable result",
+      "lesson learned"
+    ]
+  },
+  {
+    "id": "gen_13",
+    "category": "General",
+    "difficulty": "easy",
+    "question": "How would your friends or colleagues describe you?",
+    "model_answer": "A good answer offers two or three genuine qualities, each supported by a short example or something people have actually said about the candidate, and keeps them relevant to the workplace such as reliable, curious or supportive. It sounds honest rather than like a list of buzzwords.",
+    "key_points": [
+      "two or three genuine qualities",
+      "supported by an example",
+      "relevant to work",
+      "honest tone"
+    ]
+  },
+  {
+    "id": "gen_14",
+    "category": "General",
+    "difficulty": "easy",
+    "question": "What skills do you want to develop in the next year?",
+    "model_answer": "A strong answer names specific skills relevant to the role and field, explains why they matter, and describes a concrete plan to learn them, such as courses, projects or mentoring. It shows ambition and self-awareness about current gaps.",
+    "key_points": [
+      "specific, relevant skills",
+      "why they matter",
+      "concrete learning plan",
+      "self-awareness"
+    ]
+  },
+  {
+    "id": "gen_15",
+    "category": "General",
+    "difficulty": "medium",
+    "question": "How do you approach solving a problem you have never seen before?",
+    "model_answer": "A good answer describes a clear method: understand and restate the problem, break it into smaller parts, research or look at similar known problems, try a simple solution first and test it, ask for help when stuck, and reflect on what worked. It demonstrates structured thinking instead of panic or guessing.",
+    "key_points": [
+      "clarifies the problem",
+      "breaks it into parts",
+      "researches similar problems",
+      "tests iteratively",
+      "asks for help when stuck"
+    ]
+  },
+  {
+    "id": "gen_16",
+    "category": "General",
+    "difficulty": "medium",
+    "question": "What is your view on the impact of AI on jobs?",
+    "model_answer": "A thoughtful answer is balanced: AI will automate some repetitive tasks and change many roles, but it also creates new jobs and makes people more productive, so the practical response is continuous learning and focusing on skills that complement AI such as judgment, communication and domain knowledge. It shows informed awareness and does not rely on extreme claims.",
+    "key_points": [
+      "balanced view",
+      "automation of repetitive tasks",
+      "new roles and productivity gains",
+      "importance of continuous learning",
+      "informed rather than extreme"
+    ]
+  },
+  {
+    "id": "gen_17",
+    "category": "General",
+    "difficulty": "easy",
+    "question": "Tell me about a time you helped someone learn something.",
+    "model_answer": "A good answer gives a specific example of teaching or mentoring a classmate or colleague, describes how the candidate adapted the explanation to the other person, and shows the result. It highlights patience, communication and teamwork.",
+    "key_points": [
+      "specific example",
+      "adapted the explanation",
+      "positive outcome",
+      "patience and communication"
+    ]
+  },
+  {
+    "id": "gen_18",
+    "category": "General",
+    "difficulty": "easy",
+    "question": "What does professionalism mean to you?",
+    "model_answer": "A strong answer defines professionalism through concrete behaviors: punctuality, reliability, respectful communication, taking responsibility for work and mistakes, keeping confidentiality, and staying calm under pressure, ideally supported by a short example from the candidate's own experience.",
+    "key_points": [
+      "concrete behaviors",
+      "reliability and respect",
+      "accountability",
+      "example from experience"
+    ]
+  },
+  {
+    "id": "gen_19",
+    "category": "General",
+    "difficulty": "medium",
+    "question": "What would you focus on in your first 30 days in a new job?",
+    "model_answer": "A good answer shows a sensible plan: learn the team, tools, processes and goals, ask questions, build relationships with colleagues, understand what success looks like for the role, and pick up small tasks to deliver early value. It signals eagerness to learn before trying to change things.",
+    "key_points": [
+      "learn the team, tools and processes",
+      "ask questions",
+      "build relationships",
+      "clarify expectations",
+      "deliver early small wins"
+    ]
+  },
+  {
+    "id": "gen_20",
+    "category": "General",
+    "difficulty": "medium",
+    "question": "What have you learned from your academic projects or internship?",
+    "model_answer": "A strong answer names two or three specific lessons, such as teamwork, version control, deadline management or applying theory to real data, ties each to a concrete moment in the project, and shows how it changed the way the candidate works now. It should be specific rather than generic.",
+    "key_points": [
+      "specific lessons",
+      "tied to concrete moments",
+      "applied theory to practice",
+      "changed how they work"
+    ]
+  },
+  {
+    "id": "gen_21",
+    "category": "General",
+    "difficulty": "medium",
+    "question": "How do you stay organized when managing a long project?",
+    "model_answer": "A good answer describes concrete methods: breaking the project into smaller tasks with deadlines, using tools such as a task board, calendar or Git for tracking, setting regular check-ins or milestones, documenting progress, and adjusting the plan when things change. It shows a repeatable system rather than a vague claim of being organized.",
+    "key_points": [
+      "breaks work into tasks and milestones",
+      "uses specific tools",
+      "regular check-ins",
+      "documents progress",
+      "adjusts the plan when needed"
+    ]
+  },
+  {
+    "id": "gen_22",
+    "category": "General",
+    "difficulty": "medium",
+    "question": "What role does data play in decision-making today?",
+    "model_answer": "A strong answer explains that organizations use data to replace guesswork with evidence: measuring performance, spotting trends, predicting outcomes and personalizing products. It also notes that data quality, bias and privacy matter, and that data should support human judgment rather than replace it, ideally with a short example.",
+    "key_points": [
+      "evidence-based rather than guesswork",
+      "examples such as trends, predictions or personalization",
+      "data quality and bias matter",
+      "privacy considerations",
+      "supports human judgment"
+    ]
+  },
+  {
+    "id": "gen_23",
+    "category": "General",
+    "difficulty": "medium",
+    "question": "Explain a complex concept from your field to someone with no technical background.",
+    "model_answer": "A strong answer picks one concept, uses plain language and a simple everyday analogy, avoids jargon or defines it immediately, builds from simple to detailed, and checks that the listener understands. The clarity of the explanation matters as much as its accuracy.",
+    "key_points": [
+      "chooses a clear concept",
+      "uses an everyday analogy",
+      "avoids or explains jargon",
+      "simple to detailed structure",
+      "checks understanding"
+    ]
+  },
+  {
+    "id": "gen_24",
+    "category": "General",
+    "difficulty": "medium",
+    "question": "How do you deal with failure or setbacks in your studies or projects?",
+    "model_answer": "A good answer acknowledges that setbacks hurt but shows a constructive routine: analyzing what went wrong, asking for feedback, adjusting the approach, and trying again, supported by a brief real example in which a failure led to improvement. It shows resilience and a growth mindset.",
+    "key_points": [
+      "accepts the setback honestly",
+      "analyzes what went wrong",
+      "seeks feedback",
+      "adjusts and tries again",
+      "real example showing growth"
+    ]
+  },
+  {
+    "id": "gen_25",
+    "category": "General",
+    "difficulty": "easy",
+    "question": "What do you think makes a good team player?",
+    "model_answer": "A strong answer names specific qualities such as reliable follow-through, clear communication, willingness to help others, openness to feedback and sharing credit, and backs at least one with a short example from the candidate's own teamwork. It shows that the candidate values the team's success over personal recognition.",
+    "key_points": [
+      "reliability",
+      "clear communication",
+      "helping others",
+      "openness to feedback",
+      "example from own experience"
+    ]
+  },
+  {
+    "id": "gen_26",
+    "category": "General",
+    "difficulty": "easy",
+    "question": "What are you passionate about, and why?",
+    "model_answer": "A good answer names a genuine passion, explains what draws the candidate to it, shows evidence of real involvement such as projects, practice or learning, and ideally connects it to the qualities they would bring to the job, such as curiosity or persistence. Authentic enthusiasm matters more than the topic.",
+    "key_points": [
+      "genuine, specific passion",
+      "explains why it matters to them",
+      "evidence of real involvement",
+      "connection to professional qualities"
+    ]
+  },
+  {
+    "id": "gen_27",
+    "category": "General",
+    "difficulty": "medium",
+    "question": "How do you decide whether information you find online is reliable?",
+    "model_answer": "A strong answer lists practical checks: considering who the source is and whether they are an expert, checking whether other reputable sources confirm the claim, looking at the date and evidence provided, watching for bias or emotional language, and verifying statistics against original sources. It shows critical thinking, especially important in a world with misinformation.",
+    "key_points": [
+      "checks the source and expertise",
+      "cross-checks with other reliable sources",
+      "looks at evidence and date",
+      "watches for bias",
+      "verifies original data"
+    ]
+  },
+  {
+    "id": "gen_28",
+    "category": "General",
+    "difficulty": "medium",
+    "question": "Where do you think technology is heading in the next five years?",
+    "model_answer": "A thoughtful answer names two or three specific, realistic trends, for example wider use of AI assistants, cloud and edge computing, or stronger privacy and security needs, explains briefly why each matters, and links them to the candidate's own plans to learn or contribute. It shows informed curiosity without exaggerated predictions.",
+    "key_points": [
+      "specific realistic trends",
+      "brief reasoning for each",
+      "avoids exaggerated claims",
+      "links to the candidate's own learning or goals"
+    ]
+  },
+  {
+    "id": "gen_29",
+    "category": "General",
+    "difficulty": "medium",
+    "question": "What would you do if you were given a task with unclear instructions?",
+    "model_answer": "A good answer shows initiative and communication: try first to understand the goal from available context, then ask specific clarifying questions instead of guessing, confirm the expected outcome and deadline, start with a small draft or plan to check direction early, and document what was agreed. It shows responsibility rather than waiting or making silent assumptions.",
+    "key_points": [
+      "understands the goal from context first",
+      "asks specific clarifying questions",
+      "confirms expected outcome and deadline",
+      "shows an early draft to check direction",
+      "documents what was agreed"
+    ]
+  },
+  {
+    "id": "gen_30",
+    "category": "General",
+    "difficulty": "easy",
+    "question": "How do you balance your studies with other commitments?",
+    "model_answer": "A strong answer describes a real system: planning the week, prioritizing by deadlines and importance, protecting time for rest and personal commitments, avoiding last-minute work, and saying no or asking for help when overloaded, supported by a short example. It shows time-management skills that transfer to a job.",
+    "key_points": [
+      "plans and prioritizes",
+      "protects time for rest and commitments",
+      "avoids last-minute work",
+      "asks for help when overloaded",
+      "real example"
+    ]
+  }
+]

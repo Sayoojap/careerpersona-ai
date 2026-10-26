@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% if show_all %}History{% else %}Dashboard{% endif %} — CareerPersona AI</title>
+<link rel="stylesheet" href="{% static 'assets/style.css' %}">
+</head>
+<body>
+
+<div class="shell">
+  <aside class="sidebar">
+    <div class="logo">CareerPersona <span class="badge">AI</span></div>
+    <a {% if not show_all %}class="active"{% endif %} href="{% url 'dashboard' %}"><span class="icon">&#8226;</span> Dashboard</a>
+    <a href="{% url 'select_category' %}"><span class="icon">&#8226;</span> Practice interview</a>
+    <a {% if show_all %}class="active"{% endif %} href="{% url 'history' %}"><span class="icon">&#8226;</span> History</a>
+    <a href="{% url 'logout' %}"><span class="icon">&#8226;</span> Log out</a>
+  </aside>
+
+  <main class="main">
+    {% if show_all %}
+      <h1>Your history</h1>
+      <p>Every interview session you've completed.</p>
+    {% else %}
+      <h1>Welcome back, {{ request.user.first_name|default:request.user.username }}</h1>
+      <p>Here's how your practice interviews have been going.</p>
+
+      <div class="stat-row">
+        <div class="stat-box"><div class="n">{{ stats.completed }}</div><div class="l">Interviews completed</div></div>
+        <div class="stat-box"><div class="n">{% if stats.average != None %}{{ stats.average }}%{% else %}-{% endif %}</div><div class="l">Average score</div></div>
+        <div class="stat-box"><div class="n">{% if stats.improvement != None %}{% if stats.improvement >= 0 %}+{% endif %}{{ stats.improvement }}%{% else %}-{% endif %}</div><div class="l">Latest vs previous session</div></div>
+        <div class="stat-box"><div class="n">{% if stats.strongest %}{{ stats.strongest }}{% else %}-{% endif %}</div><div class="l">Strongest category</div></div>
+      </div>
+    {% endif %}
+
+    <div style="display:flex; justify-content:space-between; align-items:center; margin:{% if show_all %}26px{% else %}0{% endif %} 0 14px;">
+      <h2 style="margin:0;">{% if show_all %}All sessions{% else %}Recent sessions{% endif %}</h2>
+      <a href="{% url 'select_category' %}" class="btn btn-primary">Start new interview</a>
+    </div>
+
+    {% if rows %}
+    <table class="history">
+      <thead>
+        <tr><th>Date</th><th>Category</th><th>Score</th><th>Top area to improve</th><th></th></tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td>{{ row.session.started_at|date:"M j, Y" }}</td>
+          <td>
+            {% if row.session.category == "Technical" %}<span class="pill pill-brand">Technical</span>
+            {% elif row.session.category == "HR" %}<span class="pill pill-teal">HR</span>
+            {% else %}<span class="pill pill-amber">{{ row.session.category }}</span>{% endif %}
+          </td>
+          <td>{{ row.score|floatformat:0 }}%</td>
+          <td>{{ row.weakest }}</td>
+          <td><a href="{% url 'session_results' row.session.id %}">View</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% if not show_all and total_sessions > 5 %}
+      <p style="margin-top:14px;"><a href="{% url 'history' %}">View all {{ total_sessions }} sessions &rarr;</a></p>
+    {% endif %}
+    {% else %}
+    <div class="card" style="text-align:center; padding:40px;">
+      <h3>No completed interviews yet</h3>
+      <p>Finish your first practice interview and your scores will show up here.</p>
+      <a href="{% url 'select_category' %}" class="btn btn-primary">Start your first interview</a>
+    </div>
+    {% endif %}
+  </main>
+</div>
+
+</body>
+</html>

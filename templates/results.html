@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session results — CareerPersona AI</title>
+<link rel="stylesheet" href="{% static 'assets/style.css' %}">
+</head>
+<body>
+
+<div class="shell">
+  <aside class="sidebar">
+    <div class="logo">CareerPersona <span class="badge">AI</span></div>
+    <a href="{% url 'dashboard' %}"><span class="icon">&#8226;</span> Dashboard</a>
+    <a href="{% url 'select_category' %}"><span class="icon">&#8226;</span> Practice interview</a>
+    <a href="{% url 'history' %}"><span class="icon">&#8226;</span> History</a>
+    <a href="{% url 'logout' %}"><span class="icon">&#8226;</span> Log out</a>
+  </aside>
+
+  <main class="main">
+    <span class="pill pill-brand">{{ session.category }} interview — complete</span>
+    <h1 style="margin-top:12px;">Your session results</h1>
+    <p>Average score: <strong>{{ session.average_score }}%</strong> across {{ responses|length }} questions.</p>
+
+    {% for response in responses %}
+    <div class="card" style="margin-top:20px; padding:24px;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:20px;">
+        <div style="flex:1;">
+          <h3>Q{{ forloop.counter }}: "{{ response.question.question_text }}"</h3>
+          <p style="font-size:.9rem;"><strong>Your answer:</strong> {{ response.candidate_answer }}</p>
+          <p style="font-size:.9rem;"><strong>Strength:</strong> {{ response.strength }}</p>
+          <p style="font-size:.9rem;"><strong>Improvement:</strong> {{ response.improvement }}</p>
+          <p style="font-size:.9rem;"><strong>Suggestion:</strong> {{ response.suggestion }}</p>
+        </div>
+        <div style="text-align:center; flex-shrink:0;">
+          <div style="font-family:'Space Grotesk',sans-serif; font-size:1.8rem; font-weight:700; color:var(--brand);">{{ response.overall_score|floatformat:0 }}</div>
+          <div style="font-size:.7rem; color:var(--muted);">OVERALL</div>
+        </div>
+      </div>
+      <div class="metric-grid" style="margin-top:16px;">
+        <div class="metric">
+          <div class="label"><span>Relevance</span><span>{{ response.relevance }}%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:{{ response.relevance }}%;"></div></div>
+        </div>
+        <div class="metric">
+          <div class="label"><span>Content quality</span><span>{{ response.content_quality }}%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:{{ response.content_quality }}%; background:var(--brand);"></div></div>
+        </div>
+        <div class="metric">
+          <div class="label"><span>Communication</span><span>{{ response.communication }}%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:{{ response.communication }}%; background:var(--amber);"></div></div>
+        </div>
+        <div class="metric">
+          <div class="label"><span>Confidence</span><span>{{ response.confidence }}%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:{{ response.confidence }}%; background:var(--teal);"></div></div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+    <div style="margin-top:30px;">
+      <a href="{% url 'select_category' %}" class="btn btn-primary">Back to categories</a>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

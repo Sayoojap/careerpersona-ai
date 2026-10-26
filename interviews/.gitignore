@@ -1,0 +1,9 @@
+.env
+venv/
+__pycache__/
+*.pyc
+db.sqlite3
+db_demo_backup.sqlite3
+chroma_db/
+get-pip.py
+.vscode/
